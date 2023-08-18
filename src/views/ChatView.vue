@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import ChatBox from '@/components/ChatBox.vue'
 import HeaderChat from '@/components/HeaderChat.vue'
-import RoomChat from '@/components/RoomChat.vue'
-import { useChatStore } from '@/stores/chat'
-const chatStore = useChatStore()
 </script>
 
 <template>
-  <HeaderChat />
-  <ChatBox v-if="chatStore.roomNo" />
-  <RoomChat v-else />
+  <div class="chat-wrapper">
+    <HeaderChat />
+    <ChatBox />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.chat-wrapper {
+  background-color: #eef5f9;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
